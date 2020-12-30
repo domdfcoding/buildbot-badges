@@ -36,13 +36,13 @@ from buildbot.www.plugin import Application
 from klein import Klein
 from twisted.internet import defer
 
-__all__ = ["Api"]
-
 __author__: str = "Buildbot Team Members"
 __copyright__: str = "2020 Dominic Davis-Foster"
 __license__: str = "GNU General Public License v2 (GPLv2)"
 __version__: str = "2.9.4"
 __email__: str = "users@buildbot.net"
+
+__all__ = ["Api"]
 
 
 class Api:
@@ -129,8 +129,10 @@ class Api:
 		defer.returnValue(svgdata)
 
 	def textwidth(self, text, config):
-		"""Calculates the width of the specified text.
 		"""
+		Calculates the width of the specified text.
+		"""
+
 		surface = cairo.SVGSurface(None, 1280, 200)
 		ctx = cairo.Context(surface)
 		ctx.select_font_face(config["font_face"], cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
@@ -138,8 +140,10 @@ class Api:
 		return ctx.text_extents(text)[4]
 
 	def makesvg(self, right_text, status=None, left_text=None, left_color=None, config=None):
-		"""Renders an SVG from the template, using the specified data
 		"""
+		Renders an SVG from the template, using the specified data
+		"""
+
 		right_color = config["color_scheme"].get(status, "#9f9f9f")  # Grey
 
 		left_text = left_text or config["left_text"]

@@ -21,6 +21,7 @@ entry_points:
 
 manifest_additional:
  - recursive-include buildbot_badges/templates *.j2
+ - include VERSION
 
 python_versions:
  - 3.6

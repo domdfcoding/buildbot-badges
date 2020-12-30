@@ -3,5 +3,6 @@ include LICENSE
 include requirements.txt
 prune **/__pycache__
 recursive-include buildbot_badges/templates *.j2
+include VERSION
 recursive-include buildbot_badges *.pyi
 include buildbot_badges/py.typed
