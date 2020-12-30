@@ -5,7 +5,7 @@ copyright_years: '2020'
 author: 'Dominic Davis-Foster'
 email: 'dominic@davis-foster.co.uk'
 username: 'domdfcoding'
-version: '0.0.0'
+version: '2.9.4'
 license: 'GPLv2'
 short_desc: 'Fork of buildbot-badges with support for specifying builders by name.'
 
@@ -17,3 +17,13 @@ on_pypi: false
 entry_points:
  "buildbot.www":
   - badges = buildbot_badges:ep
+
+
+manifest_additional:
+ - recursive-include buildbot_badges/templates *.j2
+
+python_versions:
+ - 3.6
+ - 3.7
+ - 3.8
+ - 3.9

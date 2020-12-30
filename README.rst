@@ -59,7 +59,7 @@ buildbot-badges
 .. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/buildbot-badges
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/buildbot-badges/v0.0.0
+.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/buildbot-badges/v2.9.4
 	:target: https://github.com/domdfcoding/buildbot-badges/pulse
 	:alt: GitHub commits since tagged version
 

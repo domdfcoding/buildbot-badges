@@ -1,0 +1,6 @@
+buildbot>=2.9.4
+cairocffi>=1.2.0
+cairosvg>=2.5.0
+jinja2>=2.11.2
+klein>=20.6.0
+twisted>=20.3.0
