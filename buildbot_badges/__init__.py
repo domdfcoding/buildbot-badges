@@ -59,15 +59,15 @@ class Api:
 		"font_face": "DejaVu Sans",
 		"font_size": 11,
 		"color_scheme": {
-				"exception": "#007ec6",  # blue
-				"failure": "#e05d44",  # red
-				"retry": "#007ec6",  # blue
-				"running": "#007ec6",  # blue
-				"skipped": "a4a61d",  # yellowgreen
-				"success": "#4c1",  # brightgreen
-				"unknown": "#9f9f9f",  # lightgrey
-				"warnings": "#dfb317"  # yellow
-				},
+		"exception": "#007ec6",  # blue
+		"failure": "#e05d44",  # red
+		"retry": "#007ec6",  # blue
+		"running": "#007ec6",  # blue
+		"skipped": "a4a61d",  # yellowgreen
+		"success": "#4c1",  # brightgreen
+		"unknown": "#9f9f9f",  # lightgrey
+		"warnings": "#dfb317"  # yellow
+		},
 	}
 
 	def __init__(self, ep):
