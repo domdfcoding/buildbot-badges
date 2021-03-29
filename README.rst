@@ -67,7 +67,7 @@ buildbot-badges
 	:target: https://github.com/domdfcoding/buildbot-badges/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2020
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2021
 	:alt: Maintenance
 
 .. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/buildbot-badges/master.svg
