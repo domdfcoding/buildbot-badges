@@ -23,17 +23,18 @@ Fork of buildbot-badges with support for specifying builders by name.
 #
 
 # stdlib
+from typing import Any, Dict
 from xml.sax.saxutils import escape
 
 # 3rd party
-import buildbot.master
-import cairocffi as cairo
-import cairosvg
+import buildbot.master  # type: ignore
+import cairocffi as cairo  # type: ignore
+import cairosvg  # type: ignore
 import jinja2
-from buildbot.process.results import Results
-from buildbot.util import bytes2unicode
-from buildbot.www.plugin import Application
-from klein import Klein
+from buildbot.process.results import Results  # type: ignore
+from buildbot.util import bytes2unicode  # type: ignore
+from buildbot.www.plugin import Application  # type: ignore
+from klein import Klein  # type: ignore
 from twisted.internet import defer
 
 __author__: str = "Buildbot Team Members"
@@ -44,8 +45,19 @@ __email__: str = "users@buildbot.net"
 
 __all__ = ["Api"]
 
+color_scheme: Dict[str, Any] = {
+		"exception": "#007ec6",  # blue
+		"failure": "#e05d44",  # red
+		"retry": "#007ec6",  # blue
+		"running": "#007ec6",  # blue
+		"skipped": "a4a61d",  # yellowgreen
+		"success": "#4c1",  # brightgreen
+		"unknown": "#9f9f9f",  # lightgrey
+		"warnings": "#dfb317"  # yellow
+		}
 
-class Api:
+
+class Api:  # noqa: D101
 	app = Klein()
 
 	default = {  # note that these defaults are documented in configuration/www.rst
@@ -58,16 +70,7 @@ class Api:
 		"template_name": "{style}.svg.j2",
 		"font_face": "DejaVu Sans",
 		"font_size": 11,
-		"color_scheme": {
-		"exception": "#007ec6",  # blue
-		"failure": "#e05d44",  # red
-		"retry": "#007ec6",  # blue
-		"running": "#007ec6",  # blue
-		"skipped": "a4a61d",  # yellowgreen
-		"success": "#4c1",  # brightgreen
-		"unknown": "#9f9f9f",  # lightgrey
-		"warnings": "#dfb317"  # yellow
-		},
+		"color_scheme": color_scheme,
 	}
 
 	def __init__(self, ep):
@@ -77,13 +80,13 @@ class Api:
 				ChoiceLoader([jinja2.PackageLoader("buildbot_badges"), jinja2.FileSystemLoader("templates")])
 				)
 
-	def makeConfiguration(self, request):
+	def makeConfiguration(self, request):  # noqa: D102
 
 		config = {}
 		config.update(self.default)
 		for k, v in self.ep.config.items():
 			if k == "color_scheme":
-				config[k].update(v)
+				config[k].update(v)  # type: ignore
 			else:
 				config[k] = v
 
@@ -94,14 +97,14 @@ class Api:
 
 	@app.route("/<path:builder>.png", methods=["GET"])
 	@defer.inlineCallbacks
-	def getPng(self, request, builder):
+	def getPng(self, request, builder):  # noqa: D102
 		svg = yield self.getSvg(request, builder)
 		request.setHeader("content-type", "image/png")
 		defer.returnValue(cairosvg.svg2png(svg))
 
 	@app.route("/<path:builder>.svg", methods=["GET"])
 	@defer.inlineCallbacks
-	def getSvg(self, request, builder):
+	def getSvg(self, request, builder):  # noqa: D102
 
 		master: buildbot.master.BuildMaster = self.ep.master
 
@@ -141,7 +144,7 @@ class Api:
 
 	def makesvg(self, right_text, status=None, left_text=None, left_color=None, config=None):
 		"""
-		Renders an SVG from the template, using the specified data
+		Renders an SVG from the template, using the specified data.
 		"""
 
 		right_color = config["color_scheme"].get(status, "#9f9f9f")  # Grey
