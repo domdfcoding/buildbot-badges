@@ -20,7 +20,7 @@ buildbot-badges
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained|
 	* - QA
-	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
+	  - |codefactor| |actions_flake8| |actions_mypy|
 	* - Other
 	  - |license| |language| |requires|
 
@@ -44,8 +44,8 @@ buildbot-badges
 	:target: https://github.com/domdfcoding/buildbot-badges/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/buildbot-badges/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/buildbot-badges/requirements/?branch=master
+.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/buildbot-badges/badge.svg
+	:target: https://dependency-dash.herokuapp.com/github/domdfcoding/buildbot-badges/
 	:alt: Requirements Status
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/buildbot-badges?logo=codefactor
@@ -67,12 +67,8 @@ buildbot-badges
 	:target: https://github.com/domdfcoding/buildbot-badges/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2021
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2022
 	:alt: Maintenance
-
-.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/buildbot-badges/master.svg
-	:target: https://results.pre-commit.ci/latest/github/domdfcoding/buildbot-badges/master
-	:alt: pre-commit.ci status
 
 .. end shields
 
