@@ -44,8 +44,8 @@ buildbot-badges
 	:target: https://github.com/domdfcoding/buildbot-badges/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://dependency-dash.herokuapp.com/github/domdfcoding/buildbot-badges/badge.svg
-	:target: https://dependency-dash.herokuapp.com/github/domdfcoding/buildbot-badges/
+.. |requires| image:: https://dependency-dash.repo-helper.uk/github/domdfcoding/buildbot-badges/badge.svg
+	:target: https://dependency-dash.repo-helper.uk/github/domdfcoding/buildbot-badges/
 	:alt: Requirements Status
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/buildbot-badges?logo=codefactor
